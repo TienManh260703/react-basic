@@ -9,20 +9,29 @@ class Mycomponent extends React.Component {
    */
 
   state = {
-    name: "Manh",
+    name: "Mạnh",
     channel: "Manh hoc react",
   };
-  handOnChangeNamme = (event) => {
+  handleOnChangeNamme = (event) => {
+    console.log(
+      event.target.value,
+      "event target : ",
+      event.target,
+      "event object : ",
+      event
+    );
     this.setState({
       name: event.target.value,
+      channel: event.target.value,
     });
   };
   // click me
   handleClickButton = () => {
-    console.log("his");
+    console.log("hit the click");
     alert("click me");
   };
   render() {
+    console.log(">>> call render : ", this.state);
     let name = "Mạnh";
     return (
       <React.Fragment>
@@ -31,7 +40,7 @@ class Mycomponent extends React.Component {
           <input
             value={this.state.name}
             type="text"
-            onChange={(event) => this.handOnChangeNamme(event)}
+            onChange={(event) => this.handleOnChangeNamme(event)}
           ></input>
           Nguyen Tien {this.state.name}
         </div>
