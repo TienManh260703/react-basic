@@ -17,6 +17,11 @@ class Mycomponent extends React.Component {
       name: event.target.value,
     });
   };
+  // click me
+  handleClickButton = () => {
+    console.log("his");
+    alert("click me");
+  };
   render() {
     let name = "Mạnh";
     return (
@@ -31,6 +36,10 @@ class Mycomponent extends React.Component {
           Nguyen Tien {this.state.name}
         </div>
         <div className="second">Manh dang xem o dau : {this.state.channel}</div>
+        <div className="third">
+          {/* cách gọi arow function  */}
+          <button onClick={() => this.handleClickButton()}>Click me</button>
+        </div>
       </React.Fragment>
     );
   }
