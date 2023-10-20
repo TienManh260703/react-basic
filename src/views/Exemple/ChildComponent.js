@@ -30,7 +30,7 @@ class ChildComponent extends React.Component {
     console.log(">>> call render : ", this.state);
     return (
       <React.Fragment>
-        <div> Child component {this.props.name}</div>
+        <div> Child component : {this.props.name}</div>
       </React.Fragment>
     );
   }
