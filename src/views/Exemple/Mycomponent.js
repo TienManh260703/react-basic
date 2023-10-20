@@ -29,7 +29,7 @@ class Mycomponent extends React.Component {
   };
   render() {
     console.log(">>> call render : ", this.state);
-    let name = "Mạnh";
+
     return (
       <React.Fragment>
         <form>
@@ -60,7 +60,7 @@ class Mycomponent extends React.Component {
             onClick={(event) => this.handleSubmit(event)}
           />
         </form>
-        <ChildComponent name={"child one"}></ChildComponent>
+        <ChildComponent name={"Manh "} age={"24"}></ChildComponent>
         <ChildComponent name={"child two"}></ChildComponent>
         <ChildComponent name={"child three"}></ChildComponent>
       </React.Fragment>
