@@ -7,48 +7,58 @@ class Mycomponent extends React.Component {
    * Fragment : thay thế cho div tổng
    * state : : Là 1 Object
    */
-
   state = {
-    name: "Mạnh",
-    channel: "Manh hoc react",
+    firstName: "",
+    lastName: "",
   };
-  handleOnChangeNamme = (event) => {
-    console.log(
-      event.target.value,
-      "event target : ",
-      event.target,
-      "event object : ",
-      event
-    );
+  handleChangeFirstName = (event) => {
     this.setState({
-      name: event.target.value,
-      channel: event.target.value,
+      firstName: event.target.value,
     });
   };
-  // click me
-  handleClickButton = () => {
-    console.log("hit the click");
-    alert("click me");
+
+  handleChangeLastName = (event) => {
+    this.setState({
+      lastName: event.target.value,
+    });
+  };
+  handleSubmit = (event) => {
+    event.preventDefault();
+    console.log("check data input : ", this.state);
   };
   render() {
     console.log(">>> call render : ", this.state);
     let name = "Mạnh";
     return (
       <React.Fragment>
-        <div className="first">
-          {console.log("my name : ", this.state.name)}
+        <form>
+          <label htmlForfor="fname">First name:</label>
+          <br />
           <input
-            value={this.state.name}
             type="text"
-            onChange={(event) => this.handleOnChangeNamme(event)}
-          ></input>
-          Nguyen Tien {this.state.name}
-        </div>
-        <div className="second">Manh dang xem o dau : {this.state.channel}</div>
-        <div className="third">
-          {/* cách gọi arow function  */}
-          <button onClick={() => this.handleClickButton()}>Click me</button>
-        </div>
+            id="fname"
+            name="fname"
+            value={this.state.firstName}
+            onChange={(event) => this.handleChangeFirstName(event)}
+          />
+          <br />
+          <label htmlForfor="lname">Last name:</label>
+          <br />
+          <input
+            type="text"
+            id="lname"
+            name="lname"
+            value={this.state.lastName}
+            onChange={(event) => this.handleChangeLastName(event)}
+          />
+          <br />
+          <br />
+          <input
+            type="button"
+            value="Submit"
+            onClick={(event) => this.handleSubmit(event)}
+          />
+        </form>
       </React.Fragment>
     );
   }
