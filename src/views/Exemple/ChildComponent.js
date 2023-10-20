@@ -27,9 +27,12 @@ class ChildComponent extends React.Component {
     console.log("check data input : ", this.state);
   };
   render() {
-    console.log(">>> chec props : ", this.props);
-    let name = this.props.name;
-    let age = this.props.age;
+    // console.log(">>> chec props : ", this.props);
+    // let name = this.props.name;
+    // let age = this.props.age;
+    // Đinh nghĩa props theo Object
+    // Tên biến trùng với tên key
+    const { name, age } = this.props;
     return (
       <React.Fragment>
         <div>
